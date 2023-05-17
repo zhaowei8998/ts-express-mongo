@@ -9,6 +9,7 @@ export class ContactController {
     public addNewContact(req: Request, res: Response) {
         let newContact = new Contact(req.body);
         newContact.save();
+        console.log(1)
         res.send("ok")
     }
 
