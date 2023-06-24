@@ -2,14 +2,16 @@ import * as mongoose from 'mongoose';
 import { ContactSchema } from '../models/mongoose/crmModel';
 import { Request, Response } from 'express';
 import ResultJson from '../common/ResultCode'
+import ConcatService from '../service/ContactService'
+
 const Contact = mongoose.model('Contact', ContactSchema);
 
 export class ContactController {
 
     public addNewContact(req: Request, res: Response) {
-        let newContact = new Contact(req.body);
+        const ConcatServiceImpl = new ConcatService();
         try {
-            newContact.save();
+            ConcatServiceImpl.add(req.body)
             res.send(JSON.stringify(ResultJson.getSuccess()))
         } catch (error) {
             res.send(JSON.stringify(ResultJson.getFailureData(error)))
