@@ -54,4 +54,4 @@ class ResultJson {
         return new ResultJson(code, msg, data, null);
     }
 }
-module.exports = ResultJson
+export default ResultJson
