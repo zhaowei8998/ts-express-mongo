@@ -8,27 +8,47 @@ export class ContactController {
 
     public addNewContact(req: Request, res: Response) {
         let newContact = new Contact(req.body);
-        newContact.save();
-        res.send(JSON.stringify(ResultJson.getSuccess()))
+        try {
+            newContact.save();
+            res.send(JSON.stringify(ResultJson.getSuccess()))
+        } catch (error) {
+            res.send(JSON.stringify(ResultJson.getFailureData(error)))
+        }
     }
 
     public async getContacts(req: Request, res: Response) {
-        const result = await Contact.find({});
-        res.send(JSON.stringify(ResultJson.getSuccessData(result)))
+        try {
+            const result = await Contact.find({});
+            res.send(JSON.stringify(ResultJson.getSuccessData(result)))
+        } catch (error) {
+            res.send(JSON.stringify(ResultJson.getFailureData(error)))
+        }
     }
 
     public async getContactWithId(req: Request, res: Response) {
-        const result = await Contact.findById(req.params.contactId);
-        res.send(JSON.stringify(ResultJson.getSuccessData(result)))
+        try {
+            const result = await Contact.findById(req.params.contactId);
+            res.send(JSON.stringify(ResultJson.getSuccessData(result)))
+        } catch (error) {
+            res.send(JSON.stringify(ResultJson.getFailureData(error)))
+        }
     }
 
     public async updateContact(req: Request, res: Response) {
-        const result = await Contact.findOneAndUpdate({ _id: req.params.contactId }, req.body, { new: true });
-        res.send(JSON.stringify(ResultJson.getSuccessData(result)))
+        try {
+            const result = await Contact.findOneAndUpdate({ _id: req.params.contactId }, req.body, { new: true });
+            res.send(JSON.stringify(ResultJson.getSuccessData(result)))
+        } catch (error) {
+            res.send(JSON.stringify(ResultJson.getFailureData(error)))
+        }
     }
 
     public async deleteContact(req: Request, res: Response) {
-        const result = await Contact.deleteOne({ _id: req.params.contactId });
-        res.send(JSON.stringify(ResultJson.getSuccessData(result)))
+        try {
+            const result = await Contact.deleteOne({ _id: req.params.contactId });
+            res.send(JSON.stringify(ResultJson.getSuccessData(result)))
+        } catch (error) {
+            res.send(JSON.stringify(ResultJson.getFailureData(error)))
+        }
     }
 }
