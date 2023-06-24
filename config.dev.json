@@ -1,0 +1,71 @@
+{
+    "WEB_PORT": 3001,
+    "MAIN": {
+        "host": "mysql",
+        "port": 3306,
+        "database": "express",
+        "username": "root",
+        "password": "123456",
+        "dialect": "mysql",
+        "pool": {
+            "max": 2000,
+            "min": 0,
+            "idle": 10000
+        },
+        "define": {
+            "timestamps": false,
+            "freezeTableName": true,
+            "charset": "utf8"
+        },
+        "query": {
+            "raw": true
+        },
+        "logging": false
+    },
+    "LOG": {
+        "appenders": {
+            "out": {
+                "type": "console"
+            },
+            "allLog": {
+                "type": "dateFile",
+                "filename": "./logs/server",
+                "pattern": "-yyyy-MM-dd.log",
+                "alwaysIncludePattern": true
+            },
+            "httpLog": {
+                "type": "dateFile",
+                "filename": "logs/httpAccess.log",
+                "pattern": ".yyyy-MM-dd",
+                "keepFileExt": true
+            },
+            "errorLog": {
+                "type": "file",
+                "filename": "./logs/error.log"
+            },
+            "error": {
+                "type": "logLevelFilter",
+                "level": "error",
+                "appender": "errorLog"
+            }
+        },
+        "categories": {
+            "http": {
+                "appenders": [
+                    "out",
+                    "httpLog"
+                ],
+                "level": "debug"
+            },
+            "default": {
+                "appenders": [
+                    "out",
+                    "allLog",
+                    "error"
+                ],
+                "level": "debug"
+            }
+        },
+        "disableClustering": true
+    }
+}
