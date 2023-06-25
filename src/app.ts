@@ -9,7 +9,7 @@ import { sequelize } from './config/sequelize';
 class App {
 
     public app: express.Application;
-    public mongoUrl: string = 'mongodb://mongodb/CRMdb';
+    //public mongoUrl: string = 'mongodb://mongodb/CRMdb';
 
     constructor() {
         this.app = express();
@@ -30,7 +30,7 @@ class App {
     }
 
     private mongoSetup(): void {
-        mongoose.connect(this.mongoUrl);
+        //mongoose.connect(this.mongoUrl);
     }
 
     /**
@@ -75,8 +75,12 @@ class App {
         console.log('Express server listening on port ' + PORT);
     }
 
-    public async process(){
-        await sequelize.sync({ force: true });
+    public async process() {
+        sequelize.sync({ force: true }).then(() => {
+            console.log('sync successfully.');
+        }).catch(err => {
+                console.error('Unable to sync:', err);
+            });
         console.log("所有模型均已成功同步.");
     }
 }

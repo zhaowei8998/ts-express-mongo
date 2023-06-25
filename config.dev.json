@@ -1,8 +1,8 @@
 {
     "WEB_PORT": 3001,
     "MYSQL": {
-        "host": "127.0.0.1",
-        "port": 33067,
+        "host": "mysql_expressjs",
+        "port": 3306,
         "database": "ts-express",
         "username": "root",
         "password": "123456",
@@ -20,7 +20,7 @@
         "query": {
             "raw": true
         },
-        "logging": false
+        "logging": true
     },
     "LOG": {
         "appenders": {

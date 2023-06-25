@@ -8,14 +8,34 @@ services:
       - 4001:3001
     volumes:
       - ./:/app
+      - ~/.ssh:/app/.ssh:delegated
     environment:
       - TZ=Asia/Shanghai
-  mongodb:
-    image: mongo:4.2.24-bionic
+    depends_on:
+      # - mongodb_expressjs
+      - mysql_expressjs
+      - redis_expressjs
+  # mongodb_expressjs:
+  #   image: mongo:4.2.24-bionic
+  #   volumes:
+  #     - mongodb:/data
+  #   environment:
+  #     - TZ=Asia/Shanghai
+  mysql_expressjs:
+    image: mysql:5.7
+    ports:
+      - 3308:3306
     volumes:
-      - mongodb:/data
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf.d\charset.cnf:/etc/mysql/my.cnf
+      - ./mysql/log:/var/log/mysql
     environment:
+      - MYSQL_ROOT_PASSWORD=123456
       - TZ=Asia/Shanghai
-
-volumes:
-  mongodb:
+  redis_expressjs:
+    image: redis:alpine
+    command: [sh, -c, "redis-server --save \"\" --appendonly no"]
+    ports:
+      - 6379:6379
+# volumes:
+#   mongodb:
