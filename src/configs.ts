@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const env: string = process.env.NODE_ENV || 'dev';
-
+console.log('path.join(process.cwd(), `config.${env}.json`)',path.join(process.cwd(), `config.${env}.json`));
 const config_json = JSON.parse(fs.readFileSync(path.join(process.cwd(), `config.${env}.json`)).toString());
 
 export const MYSQL_CONFIG = config_json.MYSQL;

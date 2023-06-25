@@ -3,6 +3,7 @@ version: "3.7"
 services:
   app:
     build: ./
+    tty: true
     ports:
       - 4001:3001
     volumes:

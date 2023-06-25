@@ -1,0 +1,102 @@
+{
+  "folders": [
+    {
+      "name": "expressjs",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.detectIndentation": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.wordWrap": "on",
+    "files.trimTrailingWhitespace": true,
+    "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.maxColumn": 200,
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "phase",
+    "telemetry.enableCrashReporter": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.editor.labelFormat": "medium",
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/coverage": true,
+      "**/dist": true,
+      "**/tmp": true
+    },
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/.cache": true,
+      "**/.ssh": true,
+      "**/.gitconfig": true
+    },
+    "eslint.packageManager": "pnpm",
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "vue"
+    ],
+    "typescript.tsc.autoDetect": "off",
+    "npm.autoDetect": "off",
+    "files.associations": {
+      "*.wxml": "xml",
+      "*.wxss": "css",
+      "*.wxs": "js",
+      "*.mina": "vue"
+    },
+    "vetur.grammar.customBlocks": {
+      "config": "json"
+    },
+    "vetur.validation.template": false,
+    "vetur.validation.script": false,
+    "vetur.validation.interpolation": false,
+    "vetur.validation.style": false,
+    "gitlens.codeLens.enabled": false,
+    "cSpell.showStatus": false,
+    "cSpell.words": [
+      "BTAS",
+      "Nhandler",
+      "Warpper",
+      "aftersale",
+      "aftersales",
+      "antd",
+      "bytedance",
+      "consigner",
+      "consigners",
+      "dingtalk",
+      "doudian",
+      "doudians",
+      "douyin",
+      "exterface",
+      "faas",
+      "faasjs",
+      "hybird",
+      "ilike",
+      "jsonb",
+      "luxnow",
+      "myqcloud",
+      "pendings",
+      "rfid",
+      "skus",
+      "spus",
+      "wechat",
+      "wepay",
+      "xdescriptions",
+      "xiangx"
+    ],
+    "files.eol": "\n",
+    "terminal.integrated.scrollback": 100000
+  }
+}

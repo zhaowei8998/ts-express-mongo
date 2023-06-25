@@ -4,6 +4,7 @@ import routes from "./routes/routes";
 import * as mongoose from "mongoose";
 import { httpLogger, logger } from './common/log4js';
 import { PORT } from './configs';
+import { sequelize } from './config/sequelize';
 
 class App {
 
@@ -15,6 +16,8 @@ class App {
         this.config();
         this.mongoSetup();
         this.filter();
+        this.expressErrors()
+        this.process()
     }
 
     private config(): void {
@@ -35,7 +38,7 @@ class App {
      * @class Server
      * @method expressErrors
      */
-     private expressErrors() {
+    private expressErrors() {
         this.app.use((req, res, next) => {
             const errMessage = '访问异常';
             res.send({ status: 'error', data: null, message: errMessage });
@@ -70,6 +73,11 @@ class App {
         this.app.set('port', PORT || 3000);
         this.app.listen(this.app.get('port'));
         console.log('Express server listening on port ' + PORT);
+    }
+
+    public async process(){
+        await sequelize.sync({ force: true });
+        console.log("所有模型均已成功同步.");
     }
 }
 

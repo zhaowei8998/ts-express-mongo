@@ -1,0 +1,4 @@
+该包提供了 Node.js 的类型定
+```
+npm i --save-dev @types/node
+```

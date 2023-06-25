@@ -1,9 +1,9 @@
 {
     "WEB_PORT": 3001,
-    "MAIN": {
-        "host": "mysql",
-        "port": 3306,
-        "database": "express",
+    "MYSQL": {
+        "host": "127.0.0.1",
+        "port": 33067,
+        "database": "ts-express",
         "username": "root",
         "password": "123456",
         "dialect": "mysql",
@@ -15,7 +15,7 @@
         "define": {
             "timestamps": false,
             "freezeTableName": true,
-            "charset": "utf8"
+            "charset": "utf8mb4"
         },
         "query": {
             "raw": true
