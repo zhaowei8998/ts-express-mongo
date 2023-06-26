@@ -1,16 +1,17 @@
 import { Table, Model, Column, DataType } from "sequelize-typescript";
 
 type AdminAttributes = {
-    id: number,
+    id?: number,
     name: string,
     gender: string,
     phone: string,
     createdAt?: Date,
     updatedAt?: Date,
     deletedAt?: Date,
-}
+};
 @Table({
-    timestamps: false,
+    timestamps: true,
+    modelName: "admin",
     tableName: "admin",
 })
 class AdminModel extends Model<AdminAttributes> {
@@ -19,7 +20,7 @@ class AdminModel extends Model<AdminAttributes> {
         primaryKey: true,
         autoIncrement: true
     })
-    id: number;
+    id!: number;
 
     @Column({
         type: DataType.STRING,
@@ -43,19 +44,19 @@ class AdminModel extends Model<AdminAttributes> {
         type: DataType.DATE,
         allowNull: true,
     })
-    createdAt?: Date;
+    createdAt!: Date;
 
     @Column({
         type: DataType.DATE,
         allowNull: true,
     })
-    updatedAt?: Date;
+    updatedAt!: Date;
 
     @Column({
         type: DataType.DATE,
         allowNull: true,
     })
-    deletedAt?: Date;
+    deletedAt!: Date;
 
 }
 export { AdminModel, AdminAttributes }

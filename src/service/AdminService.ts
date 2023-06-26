@@ -1,14 +1,15 @@
-import { AdminAttributes, AdminModel } from "models/mysql/Admin.model";
+import { AdminAttributes, AdminModel } from "../models/mysql/AdminModel";
 
 import BaseService from "./BaseService";
 
 export default class AdminService extends BaseService {
     public async add(adminAddDTO:AdminAttributes):Promise<AdminAttributes> {
-        const adminModel:AdminAttributes = await AdminModel.create({
+        const adminModel:any = await AdminModel.create({
             name: 'string',
             gender: 'string',
             phone: 'string'
         })
+        console.log('adminModel',adminModel)
         return adminModel
     }
 

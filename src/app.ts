@@ -76,12 +76,12 @@ class App {
     }
 
     public async process() {
-        sequelize.sync({ force: true }).then(() => {
-            console.log('sync successfully.');
-        }).catch(err => {
-                console.error('Unable to sync:', err);
-            });
-        console.log("所有模型均已成功同步.");
+        // sequelize.sync({ force: true }).then(() => {
+        //     console.log('sync successfully.');
+        // }).catch(err => {
+        //         console.error('Unable to sync:', err);
+        //     });
+        // console.log("所有模型均已成功同步.");
     }
 }
 
