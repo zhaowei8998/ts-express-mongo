@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import contact from "./crmRoutes";
-import adminRoutes from './';
+import adminRoutes from './Admin';
 
 const router: Router = Router();
 router.use('/v1/contact',contact)
