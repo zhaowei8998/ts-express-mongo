@@ -22,33 +22,19 @@ export default class AdminService extends BaseService {
         // console.log({ count, rows })
         // return { count, rows }
         let where: object = {};
-        if (name) {
-            Object.assign(where, {
-                name: {
-                    [Op.like]: `%${name}%`,
-                },
-            })
-        }
-        if (phone) {
-            Object.assign(where, {
-                phone: {
-                    [Op.like]: `%${phone}%`,
-                },
-            })
-        }
-        if (gender) {
-            Object.assign(where, {
-                phone: {
-                    [Op.eq]: gender,
-                },
-            })
-        }
+
+        name ?? Object.assign(where, { name: { [Op.like]: `%${name}%`, }, })
+
+        phone ?? Object.assign(where, { phone: { [Op.like]: `%${phone}%`, }, })
+        
+        gender ?? Object.assign(where, { gender: { [Op.eq]: gender, }, })
+
         try {
             const { count, rows } = await AdminModel.findAndCountAll({
                 where: {
                     ...where
                 },
-                offset: Number(current-1),
+                offset: Number(current - 1),
                 limit: Number(pageSize)
             });
             return { count, rows }
