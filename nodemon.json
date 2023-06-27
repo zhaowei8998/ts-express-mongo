@@ -1,5 +1,8 @@
 {
-    "watch": ["src"],
-    "ext": "ts",
+    "restartable": "rs",
+    "verbose": true,
+    "watch": ["src/","./src/**/*.ts","./src/app.ts"],
+    "ext": "ts json",
+    "execMap" : { "ts" : "ts-node" },
     "exec": "export NODE_ENV=dev && ts-node ./src/server.ts"
   }

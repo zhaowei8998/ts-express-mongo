@@ -2,9 +2,9 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import routes from "./routes/routes";
 import * as mongoose from "mongoose";
-import { httpLogger, logger } from './common/log4js';
+import { logger } from './common/log4js';
 import { PORT } from './configs';
-import { sequelize } from './config/sequelize';
+import ResultJson from "./common/ResultCode";
 
 class App {
 
@@ -41,7 +41,8 @@ class App {
     private expressErrors() {
         this.app.use((req, res, next) => {
             const errMessage = '访问异常';
-            res.send({ status: 'error', data: null, message: errMessage });
+            res.status(400);
+            res.send(ResultJson.getFailureMsg(errMessage));
         });
     }
 
