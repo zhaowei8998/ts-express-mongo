@@ -1,20 +1,11 @@
 import { Table, Model, Column, DataType } from "sequelize-typescript";
-
-type AdminAttributes = {
-    id?: number,
-    name: string,
-    gender: string,
-    phone: string,
-    createdAt?: Date,
-    updatedAt?: Date,
-    deletedAt?: Date,
-};
+import { AdminInterface } from '../interface/AdminInterface'
 @Table({
     timestamps: true,
     modelName: "admin",
     tableName: "admin",
 })
-class AdminModel extends Model<AdminAttributes> {
+class AdminModel extends Model<AdminInterface> {
     @Column({
         type: DataType.INTEGER,
         primaryKey: true,
@@ -57,6 +48,11 @@ class AdminModel extends Model<AdminAttributes> {
         allowNull: true,
     })
     deletedAt!: Date;
-
+    @Column({
+        type: DataType.TINYINT,
+        allowNull: true,
+        defaultValue:1,
+    })
+    status!: number;
 }
-export { AdminModel, AdminAttributes }
+export { AdminModel }

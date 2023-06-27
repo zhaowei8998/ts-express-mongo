@@ -1,6 +1,0 @@
-sql [2023-06-27 12:54:35] [DEBUG]: Executing (default): INSERT INTO `admin` (`id`,`name`,`gender`,`phone`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?);
-
-sql [2023-06-27 12:57:43] [DEBUG]: Executing (default): INSERT INTO `admin` (`id`,`name`,`gender`,`phone`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?);
-
-sql [2023-06-27 12:58:30] [INFO]: Executing (default): INSERT INTO `admin` (`id`,`name`,`gender`,`phone`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?);
-

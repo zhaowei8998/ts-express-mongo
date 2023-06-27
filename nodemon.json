@@ -1,8 +1,10 @@
 {
     "restartable": "rs",
     "verbose": true,
-    "watch": ["src/","./src/**/*.ts","./src/app.ts","./config.*.json"],
+    "watch": ["./src/**/*.ts","./config.*.json"],
     "ext": "ts json",
     "execMap" : { "ts" : "ts-node" },
-    "exec": "export NODE_ENV=dev && ts-node ./src/server.ts"
+    "exec": "export NODE_ENV=dev && ts-node ./src/server.ts",
+    "ignore": ["logs/*", "test/*", "docs/*", "*.test.js","./node_modules","./mysql"]
+
   }
