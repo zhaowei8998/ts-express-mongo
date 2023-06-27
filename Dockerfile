@@ -71,8 +71,8 @@ WORKDIR /app
 # 运行命令，安装依赖 在docker build的过程中执行的，构建运行环境
 # RUN 命令可以有多个，但是可以用 && 连接多个命令来减少层级。
 # 例如 RUN npm install && cd /app && mkdir logs
-RUN npm install -g ts-node typescript nodemon --registry=https://registry.npm.taobao.org&& npm install --registry=https://registry.npm.taobao.org
-CMD chmod 600 ~/.ssh/id_rsa
+RUN npm install -g ts-node typescript nodemon --registry=https://registry.npm.taobao.org
+#CMD chmod 600 ~/.ssh/id_rsa
 
 #docker构建完毕，执行服务
 # CMD npm run dev

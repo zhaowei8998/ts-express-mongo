@@ -9,6 +9,7 @@ services:
     volumes:
       - ./:/app
       - ~/.ssh:/root/.ssh:delegated
+    command: /bin/bash -c "chmod 600 /root/.ssh/id_rsa"
     environment:
       - TZ=Asia/Shanghai
     depends_on:
