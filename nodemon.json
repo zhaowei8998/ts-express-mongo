@@ -1,7 +1,7 @@
 {
     "restartable": "rs",
     "verbose": true,
-    "watch": ["src/","./src/**/*.ts","./src/app.ts"],
+    "watch": ["src/","./src/**/*.ts","./src/app.ts","./config.*.json"],
     "ext": "ts json",
     "execMap" : { "ts" : "ts-node" },
     "exec": "export NODE_ENV=dev && ts-node ./src/server.ts"

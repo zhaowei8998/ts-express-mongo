@@ -5,7 +5,7 @@ import * as mongoose from "mongoose";
 import { logger } from './common/log4js';
 import { PORT } from './configs';
 import ResultJson from "./common/ResultCode";
-
+import {sequelize} from './database/mysql/sequelize'
 class App {
 
     public app: express.Application;
@@ -76,7 +76,7 @@ class App {
         console.log('Express server listening on port ' + PORT);
     }
 
-    public async process() {
+    public process() {
         // sequelize.sync({ force: true }).then(() => {
         //     console.log('sync successfully.');
         // }).catch(err => {
@@ -84,6 +84,10 @@ class App {
         //     });
         // console.log("所有模型均已成功同步.");
     }
+    public async mysqlConnection () {
+        await sequelize.sync();
+    }
+
 }
 
 export default new App();

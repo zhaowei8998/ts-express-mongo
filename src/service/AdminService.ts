@@ -1,4 +1,4 @@
-import { AdminAttributes, AdminModel } from "../models/mysql/AdminModel";
+import { AdminAttributes, AdminModel } from "../database/mysql/models/AdminModel";
 
 import BaseService from "./BaseService";
 
@@ -9,7 +9,6 @@ export default class AdminService extends BaseService {
             gender: 'string',
             phone: 'string'
         })
-        console.log('adminModel',adminModel)
         return adminModel
     }
 

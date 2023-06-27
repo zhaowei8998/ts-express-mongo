@@ -5,6 +5,6 @@ const routes: Router = Router();
 
 const adminController: AdminController = new AdminController();
 
-routes.post('add', adminController.add)
+routes.post('/add', adminController.add)
 
 export default routes

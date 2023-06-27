@@ -47,6 +47,13 @@
                 "type": "logLevelFilter",
                 "level": "error",
                 "appender": "errorLog"
+            },
+            "sql": {
+                "type": "console", 
+                "layout": {
+                    "type": "pattern",
+                    "pattern": "%c [%d{yyyy-MM-dd hh:mm:ss}] [%p]: %m%n"
+                }
             }
         },
         "categories": {
@@ -64,6 +71,10 @@
                     "error"
                 ],
                 "level": "debug"
+            },
+            "sql": {
+                "appenders": ["sql"],
+                "level": "all" 
             }
         },
         "disableClustering": true
