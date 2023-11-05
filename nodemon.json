@@ -1,5 +1,5 @@
 {
     "watch": ["src"],
     "ext": "ts",
-    "exec": "export NODE_ENV=dev && ts-node ./src/server.ts"
+    "exec": "set NODE_ENV=dev&& ts-node ./src/server.ts"
   }
