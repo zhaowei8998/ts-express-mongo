@@ -7,7 +7,9 @@
         "target": "es6",
         "outDir": "./dist",
         "baseUrl": "./src",
-        "types": ["node"]
+        "types": ["node"],
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
     },
     "include": [
         "src/**/*.ts"
@@ -16,3 +18,4 @@
         "node_modules"
     ]
 }
+
