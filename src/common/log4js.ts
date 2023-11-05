@@ -5,3 +5,4 @@ import { LOG_CONFIG } from '../configs';
 log4js.configure(LOG_CONFIG);
 export const logger = log4js.getLogger('app');
 export const httpLogger = log4js.connectLogger(log4js.getLogger('http'), { level: 'WARN' });
+export const sqlLogger = log4js.getLogger('sql');

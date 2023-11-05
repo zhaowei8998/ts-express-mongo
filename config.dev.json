@@ -33,6 +33,17 @@
                 "pattern": "-yyyy-MM-dd.log",
                 "alwaysIncludePattern": true
             },
+            "sql": {
+                "type": "dateFile", 
+                "filename": "./logs/sql.log", 
+                "maxLogSize": "1024 * 1024", 
+                "keepFileExt": true, 
+                "daysToKeep": 30,
+                "layout": {
+                    "type": "pattern",
+                    "pattern": "%c [%d{yyyy-MM-dd hh:mm:ss}] [%p]: %m%n"
+                }
+            },
             "httpLog": {
                 "type": "dateFile",
                 "filename": "logs/httpAccess.log",
@@ -50,6 +61,10 @@
             }
         },
         "categories": {
+            "sql": {
+                "appenders": ["sql"], 
+                "level": "all"
+            },
             "http": {
                 "appenders": [
                     "out",
