@@ -5,11 +5,6 @@ RUN sed -i 's@http://archive.ubuntu.com/ubuntu/@http://mirrors.aliyun.com/ubuntu
 
 RUN apt update
 
-#终端支持输入中文
-# RUN apt-get install language-pack-zh-hans
-# RUN echo 'export LANG=zh_CN.UTF-8' >> ~/.bashrc&&source ~/.bashrc
-ENV LANG C.UTF-8
-
 # 调节时区
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt install -y tzdata \

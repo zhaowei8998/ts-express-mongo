@@ -3,10 +3,6 @@ import { LOG_CONFIG } from '../configs';
 // log4js的输出级别6个: trace, debug, info, warn, error, fatal
 
 log4js.configure(LOG_CONFIG);
-process.on("exit", () => {
-    log4js.shutdown();
-});
 export const logger = log4js.getLogger('app');
 export const httpLogger = log4js.connectLogger(log4js.getLogger('http'), { level: 'WARN' });
-export const sqlLogger = log4js.getLogger("sql");
-
+export const sqlLogger = log4js.getLogger('sql');

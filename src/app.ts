@@ -145,7 +145,7 @@ class App {
         logger.info('Express server listening on port ' + PORT);
     }
 
-    public process() {
+    public async process() {
         // sequelize.sync({ force: true }).then(() => {
         //     console.log('sync successfully.');
         // }).catch(err => {

@@ -40,7 +40,7 @@
       "**/.ssh": true,
       "**/.gitconfig": true
     },
-    "eslint.packageManager": "npm",
+    "eslint.packageManager": "pnpm",
     "eslint.validate": [
       "javascript",
       "javascriptreact",

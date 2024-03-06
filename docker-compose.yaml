@@ -9,7 +9,6 @@ services:
     volumes:
       - ./:/app
       - ~/.ssh:/root/.ssh:delegated
-    command: /bin/bash -c "chmod 600 ~/.ssh/id_rsa"
     environment:
       - TZ=Asia/Shanghai
     depends_on:
@@ -28,7 +27,7 @@ services:
       - 3308:3306
     volumes:
       - ./mysql/data:/var/lib/mysql
-      - ./mysql/conf.d/charset.cnf:/etc/mysql/my.cnf
+      - ./mysql/conf.d\charset.cnf:/etc/mysql/my.cnf
       - ./mysql/log:/var/log/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=123456

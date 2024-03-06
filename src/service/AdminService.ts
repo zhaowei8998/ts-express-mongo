@@ -1,4 +1,5 @@
-import { AdminModel } from "../database/mysql/models/AdminModel";
+import { AdminAttributes, AdminModel } from "../models/mysql/AdminModel";
+
 import BaseService from "./BaseService";
 import _ from 'lodash'
 import { sequelize } from '../database/mysql/sequelize';
