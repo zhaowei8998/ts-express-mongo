@@ -1,9 +1,9 @@
 {
     "WEB_PORT": 3001,
     "MYSQL": {
-        "host": "mysql_expressjs",
-        "port": 3306,
-        "database": "ts-express",
+        "host": "localhost",
+        "port": 3307,
+        "database": "weilun-financial",
         "username": "root",
         "password": "123456",
         "dialect": "mysql",
@@ -49,11 +49,11 @@
                 "appender": "errorLog"
             },
             "sql": {
-                "type": "dateFile", 
-                "filename": "./logs/sql/loggin.log", 
-                "maxLogSize": 1048576, 
+                "type": "dateFile",
+                "filename": "./logs/sql/loggin.log",
+                "maxLogSize": 1048576,
                 "keepFileExt": true,
-                "numBackups": 30, 
+                "numBackups": 30,
                 "layout": {
                     "type": "pattern",
                     "pattern": "%c [%d{yyyy-MM-dd hh:mm:ss}] [%p]: %m%n"
@@ -77,10 +77,16 @@
                 "level": "debug"
             },
             "sql": {
-                "appenders": ["out","sql"],
-                "level": "all" 
+                "appenders": [
+                    "out",
+                    "sql"
+                ],
+                "level": "all"
             }
         },
         "disableClustering": true
+    },
+    "JWT": {
+        "secret:": "aokd09AASOfk"
     }
 }

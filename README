@@ -3,12 +3,16 @@
 npm i --save-dev @types/node
 npm install --save-dev @types/node @types/validator
 npm install sequelize reflect-metadata sequelize-typescript
-sequelize-typescript@0.5.0
+npm install sequelize-typescript@0.5.0
 ```
-### 初始化
+; ### 初始化
 
-1. 安装 VS Code https://code.visualstudio.com/
-2. 安装 VS Code 插件 Remote https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
-3. 安装 Docker https://www.docker.com/
-4. 用 VS Code 打开 `xiangx.code-workspace`
-5. 点击左下角绿色按钮，选择 `Remote-Containers: Reopen in Container`
+; 1. 安装 VS Code https://code.visualstudio.com/
+; 2. 安装 VS Code 插件 Remote https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
+; 3. 安装 Docker https://www.docker.com/
+; 4. 用 VS Code 打开 `node.code-workspace`
+; 5. 点击左下角绿色按钮，选择 `Remote-Containers: Reopen in Container`
+
+### ORM生成model
+sequelize-auto -l ts -h <host> -d <database> -u <user> -x [password] -p [port]  --dialect [dialect] -c [/path/to/config] -o [/path/to/models] -t [tableName]
+sequelize-auto -l ts -h localhost -d weilun-financial -u root -x 123456 -p 3307 --dialect mysql -o ./src/models -t tableName

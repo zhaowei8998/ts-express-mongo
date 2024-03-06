@@ -1,4 +1,4 @@
-import * as log4js from 'log4js';
+import log4js from 'log4js';
 import { LOG_CONFIG } from '../configs';
 // log4js的输出级别6个: trace, debug, info, warn, error, fatal
 
